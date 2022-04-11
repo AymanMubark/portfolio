@@ -10,7 +10,9 @@ class WorksSection extends StatelessWidget {
       margin: EdgeInsets.symmetric(
           vertical: 100, horizontal: MediaQuery.of(context).size.width * .12),
       child: Column(
-        crossAxisAlignment: CrossAxisAlignment.end,
+        crossAxisAlignment: (MediaQuery.of(context).size.width >= 1000)
+            ? CrossAxisAlignment.end
+            : CrossAxisAlignment.center,
         children: [
           Text(
             "My Work",
@@ -20,16 +22,19 @@ class WorksSection extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               Container(
-                width: MediaQuery.of(context).size.width * .35,
+                width: (MediaQuery.of(context).size.width >= 1000)
+                    ? MediaQuery.of(context).size.width * .35
+                    : MediaQuery.of(context).size.width * .6,
                 child: Text(
                   'These are some of my personal projects, some are design, others design and develop',
                   textAlign: TextAlign.justify,
                   style: Theme.of(context).textTheme.headline6,
                 ),
               ),
-              Expanded(
-                child: SizedBox(),
-              ),
+              if (MediaQuery.of(context).size.width >= 1000)
+                Expanded(
+                  child: SizedBox(),
+                ),
             ],
           ),
           SizedBox(height: 70),

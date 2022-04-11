@@ -10,7 +10,9 @@ class AboutSection extends StatelessWidget {
       margin: EdgeInsets.symmetric(
           vertical: 100, horizontal: MediaQuery.of(context).size.width * .12),
       child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
+        crossAxisAlignment: (MediaQuery.of(context).size.width >= 1000)
+            ? CrossAxisAlignment.start
+            : CrossAxisAlignment.center,
         children: [
           Text(
             "About Me",
@@ -19,11 +21,14 @@ class AboutSection extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              Expanded(
-                child: SizedBox(),
-              ),
+              if (MediaQuery.of(context).size.width >= 1000)
+                Expanded(
+                  child: SizedBox(),
+                ),
               Container(
-                width: MediaQuery.of(context).size.width * .35,
+                width: (MediaQuery.of(context).size.width >= 1000)
+                    ? MediaQuery.of(context).size.width * .35
+                    : MediaQuery.of(context).size.width * .7,
                 child: Text(
                   'Experienced Software Developer with 4+ years in the industry . expertise I am very familiar and experienced with Web Application Architecture and Mobile Apps also ,I have worked with a good number of successful development teams.',
                   textAlign: TextAlign.justify,

@@ -1,7 +1,8 @@
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import '../../../widgets/nav_icon_item.dart';
 import '../../../widgets/nav_text_item.dart';
 import 'package:flutter/material.dart';
+
+import 'socail_contact.dart';
 
 class NavBar extends StatelessWidget {
   final Function scrollTo;
@@ -29,40 +30,34 @@ class NavBar extends StatelessWidget {
               ),
             ],
           ),
-          Row(
-            children: [
-              Row(
-                children: [
-                  NavTextItem(
-                    title: 'My Works',
-                    onTap: () => scrollTo(3),
-                  ),
-                  NavTextItem(
-                    title: 'About',
-                    onTap: () => scrollTo(2),
-                  ),
-                  NavTextItem(
-                    title: 'Contact',
-                    onTap: () => scrollTo(5),
-                  ),
-                ],
-              ),
-              const SizedBox(width: 40),
-              Row(
-                children: const [
-                  NavIconItem(
-                      icon: FontAwesomeIcons.github,
-                      url: 'https://github.com/AymanMubark'),
-                  NavIconItem(
-                      icon: FontAwesomeIcons.linkedin,
-                      url: 'https://www.linkedin.com/in/ayman-mubarak-ahmed'),
-                  NavIconItem(
-                      icon: FontAwesomeIcons.behance,
-                      url: 'https://www.behance.net/aymanmubarak1'),
-                ],
-              ),
-            ],
-          ),
+          (MediaQuery.of(context).size.width >= 1000)
+              ? Row(
+                  children: [
+                    Row(
+                      children: [
+                        NavTextItem(
+                          title: 'My Works',
+                          onTap: () => scrollTo(3),
+                        ),
+                        NavTextItem(
+                          title: 'About',
+                          onTap: () => scrollTo(2),
+                        ),
+                        NavTextItem(
+                          title: 'Contact',
+                          onTap: () => scrollTo(5),
+                        ),
+                      ],
+                    ),
+                    const SizedBox(width: 40),
+                    SocialContact(),
+                  ],
+                )
+              : IconButton(
+                  onPressed: () {
+                    Scaffold.of(context).openEndDrawer();
+                  },
+                  icon: Icon(FontAwesomeIcons.barsStaggered)),
         ],
       ),
     );

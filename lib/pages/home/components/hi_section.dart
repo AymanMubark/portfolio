@@ -8,28 +8,22 @@ class HiSection extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  "Hi, my name is",
-                  style: Theme.of(context).textTheme.headline3,
-                ),
-                Text(
-                  "Ayaman",
-                  style: Theme.of(context).textTheme.headline2!.copyWith(
-                        fontWeight: FontWeight.bold,
-                      ),
-                ),
-              ],
-            ),
-            Image.asset("assets/profile.png", height: 500),
-          ],
-        ),
-        Container(
+        (MediaQuery.of(context).size.width >= 1000)
+            ? Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  buildTitle(context),
+                  buildImage(),
+                ],
+              )
+            : Column(
+                children: [
+                  buildImage(),
+                  buildTitle(context),
+                ],
+              ),
+        SizedBox(height: 30),
+        SizedBox(
           width: 500,
           child: Text(
             "I'm a dotnet developer and flutter developer from sudan 🇸🇩",
@@ -51,5 +45,27 @@ class HiSection extends StatelessWidget {
         )
       ],
     );
+  }
+
+  buildTitle(context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          "Hi, my name is",
+          style: Theme.of(context).textTheme.headline3,
+        ),
+        Text(
+          "Ayaman",
+          style: Theme.of(context).textTheme.headline2!.copyWith(
+                fontWeight: FontWeight.bold,
+              ),
+        ),
+      ],
+    );
+  }
+
+  buildImage() {
+    return Image.asset("assets/profile.png", height: 500);
   }
 }

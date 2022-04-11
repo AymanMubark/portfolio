@@ -16,8 +16,11 @@ class SkilIcon extends StatelessWidget {
       // ),
       // padding: EdgeInsets.all(15),
       child: Padding(
-        padding: const EdgeInsets.all(10.0),
-        child: Image.asset("assets/$icon.png", height: 30, width: 30),
+        padding: EdgeInsets.all(
+            (MediaQuery.of(context).size.width >= 1000) ? 10.0 : 5),
+        child: Image.asset("assets/$icon.png",
+            height: (MediaQuery.of(context).size.width >= 1000) ? 30 : 15,
+            width: (MediaQuery.of(context).size.width >= 1000) ? 30 : 15),
       ),
     );
   }

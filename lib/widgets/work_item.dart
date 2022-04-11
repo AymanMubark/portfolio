@@ -35,12 +35,16 @@ class WorkItem extends StatelessWidget {
           ),
         ],
       ),
-      width: MediaQuery.of(context).size.width * .25,
+      width: (MediaQuery.of(context).size.width >= 1000)
+          ? MediaQuery.of(context).size.width * .25
+          : 250,
       child: Column(
         children: [
           Container(
             height: 300,
-            width: MediaQuery.of(context).size.width * .25,
+            width: (MediaQuery.of(context).size.width >= 1000)
+                ? MediaQuery.of(context).size.width * .25
+                : 250,
             decoration: BoxDecoration(
               color: Colors.white,
               borderRadius: BorderRadius.vertical(top: Radius.circular(12)),
