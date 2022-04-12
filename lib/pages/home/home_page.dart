@@ -5,6 +5,7 @@ import 'package:scrollable_positioned_list/scrollable_positioned_list.dart';
 import '../../widgets/scroll_to_bottom.dart';
 import 'components/footer_section.dart';
 import 'components/more_in_section.dart';
+import 'components/recommendations_section.dart';
 import 'components/works_section.dart';
 import 'package:flutter/material.dart';
 import 'components/about_section.dart';
@@ -27,15 +28,16 @@ class _HomePageState extends State<HomePage> {
     ScrollToBottom(), //=> 1
     AboutSection(), //=> 2
     WorksSection(), //=> 3
-    MoreInSection(), //=> 4
-    FooterSection(), // 5
+    RecommendationsSection(), //=> 4
+    MoreInSection(), //=> 5
+    FooterSection(), // 6
   ];
   jumbTo(index) {
     Navigator.pop(context);
     itemScrollController.scrollTo(
         index: index,
         duration: Duration(milliseconds: 500),
-        curve: Curves.easeInOutCubic);
+        curve: Curves.easeOutQuad);
   }
 
   @override

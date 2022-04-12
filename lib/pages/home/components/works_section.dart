@@ -21,7 +21,7 @@ class WorksSection extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              Container(
+              SizedBox(
                 width: (MediaQuery.of(context).size.width >= 1000)
                     ? MediaQuery.of(context).size.width * .35
                     : MediaQuery.of(context).size.width * .6,
@@ -32,17 +32,18 @@ class WorksSection extends StatelessWidget {
                 ),
               ),
               if (MediaQuery.of(context).size.width >= 1000)
-                Expanded(
+                const Expanded(
                   child: SizedBox(),
                 ),
             ],
           ),
-          SizedBox(height: 70),
+          const SizedBox(height: 70),
           SizedBox(
             height: 500,
             child: ListView(
               scrollDirection: Axis.horizontal,
-              children: [
+              physics: const BouncingScrollPhysics(),
+              children: const [
                 WorkItem(
                   image: "amear",
                   title: "Ameera",

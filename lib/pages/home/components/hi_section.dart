@@ -42,7 +42,7 @@ class HiSection extends StatelessWidget {
             primary: Colors.white,
           ),
           child: Text("Reach out to me"),
-        )
+        ),
       ],
     );
   }
@@ -56,7 +56,7 @@ class HiSection extends StatelessWidget {
           style: Theme.of(context).textTheme.headline3,
         ),
         Text(
-          "Ayaman",
+          "Ayaman 😉",
           style: Theme.of(context).textTheme.headline2!.copyWith(
                 fontWeight: FontWeight.bold,
               ),
