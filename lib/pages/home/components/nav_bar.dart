@@ -17,18 +17,21 @@ class NavBar extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Row(
-            children: [
-              Icon(FontAwesomeIcons.code),
-              SizedBox(width: 20),
-              Text(
-                'Ayman Ahmed'.toUpperCase(),
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 22,
+          GestureDetector(
+            onTap: () => scrollTo(0),
+            child: Row(
+              children: [
+                Icon(FontAwesomeIcons.code),
+                SizedBox(width: 20),
+                Text(
+                  'Ayman Ahmed'.toUpperCase(),
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 22,
+                  ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
           (MediaQuery.of(context).size.width >= 1000)
               ? Row(
