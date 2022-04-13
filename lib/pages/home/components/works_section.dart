@@ -129,7 +129,9 @@ class WorksSection extends StatelessWidget {
             child: Row(
               children: [
                 IconButton(
-                  padding: EdgeInsets.symmetric(horizontal: 30),
+                  padding: EdgeInsets.symmetric(
+                      horizontal:
+                          (MediaQuery.of(context).size.width >= 1000) ? 30 : 0),
                   icon: Icon(FontAwesomeIcons.angleLeft),
                   onPressed: () {
                     if (currentindex > 0) {
@@ -152,10 +154,12 @@ class WorksSection extends StatelessWidget {
                   ),
                 ),
                 IconButton(
-                  padding: EdgeInsets.symmetric(horizontal: 30),
+                  padding: EdgeInsets.symmetric(
+                      horizontal:
+                          (MediaQuery.of(context).size.width >= 1000) ? 30 : 0),
                   icon: Icon(FontAwesomeIcons.angleRight),
                   onPressed: () {
-                    if (currentindex < works.length - 3) {
+                    if (currentindex < works.length - 3 || currentindex == 0) {
                       currentindex++;
                       jumbTo(currentindex);
                     }
