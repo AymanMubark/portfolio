@@ -23,7 +23,7 @@ class _HomePageState extends State<HomePage> {
   final ItemScrollController itemScrollController = ItemScrollController();
   final ItemPositionsListener itemPositionsListener =
       ItemPositionsListener.create();
-  List<Widget> sections = const [
+  List<Widget> sections = [
     HiSection(), //=> 0
     ScrollToBottom(), //=> 1
     AboutSection(), //=> 2
@@ -83,6 +83,7 @@ class _HomePageState extends State<HomePage> {
             Expanded(
                 child: ScrollablePositionedList.builder(
               itemCount: sections.length,
+              physics: BouncingScrollPhysics(),
               itemBuilder: (context, index) => sections[index],
               itemScrollController: itemScrollController,
               itemPositionsListener: itemPositionsListener,

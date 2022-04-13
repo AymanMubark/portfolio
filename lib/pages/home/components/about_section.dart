@@ -23,10 +23,10 @@ class AboutSection extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               if (MediaQuery.of(context).size.width >= 1000)
-                Expanded(
+                const Expanded(
                   child: SizedBox(),
                 ),
-              Container(
+              SizedBox(
                 width: (MediaQuery.of(context).size.width >= 1000)
                     ? MediaQuery.of(context).size.width * .35
                     : MediaQuery.of(context).size.width * .7,

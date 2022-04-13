@@ -1,6 +1,6 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:responsive_framework/responsive_framework.dart';
 import 'pages/home/home_page.dart';
 
 void main() {
@@ -14,6 +14,14 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      scrollBehavior: MaterialScrollBehavior().copyWith(
+        dragDevices: {
+          PointerDeviceKind.mouse,
+          PointerDeviceKind.touch,
+          PointerDeviceKind.stylus,
+          PointerDeviceKind.unknown
+        },
+      ),
       title: "Ayman Ahmed",
       theme: ThemeData(
         textTheme: GoogleFonts.workSansTextTheme().copyWith(
@@ -36,7 +44,7 @@ class MyApp extends StatelessWidget {
       //   ClampingScrollWrapper.builder(context, widget!),
       //   defaultScale: true,
       // ),
-      home: HomePage(),
+      home: const HomePage(),
     );
   }
 }
