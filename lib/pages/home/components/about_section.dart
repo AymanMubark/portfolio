@@ -36,7 +36,7 @@ class AboutSection extends StatelessWidget {
                       : CrossAxisAlignment.center,
                   children: [
                     Text(
-                      'Experienced Software Developer with 4+ years in the industry . expertise I am very familiar and experienced with Web Application Architecture and Mobile Apps also ,I have worked with a good number of successful development teams.',
+                      'Experienced Software Developer with 5+ years in the industry . expertise I am very familiar and experienced with Web Application Architecture and Mobile Apps also ,I have worked with a good number of successful development teams.',
                       textAlign: TextAlign.justify,
                       style: Theme.of(context).textTheme.headline6,
                     ),
