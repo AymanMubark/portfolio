@@ -17,7 +17,7 @@ class RecommendationsSection extends StatelessWidget {
           ),
           SizedBox(height: 50),
           SizedBox(
-            height: MediaQuery.of(context).size.width >= 1000 ? 220 : 400,
+            height: MediaQuery.of(context).size.width >= 1000 ? 220 : 220 * 2,
             child: ListView(
               padding: EdgeInsets.only(bottom: 20),
               scrollDirection: MediaQuery.of(context).size.width >= 1000
@@ -61,7 +61,7 @@ class RecommendationItem extends StatelessWidget {
       margin: const EdgeInsets.only(right: 20, bottom: 20),
       padding: const EdgeInsets.all(20),
       decoration: BoxDecoration(
-        color: Colors.white,
+        color: Theme.of(context).cardColor,
         borderRadius: BorderRadius.circular(12),
         boxShadow: [
           BoxShadow(
@@ -81,8 +81,21 @@ class RecommendationItem extends StatelessWidget {
       width: MediaQuery.of(context).size.width * .38,
       child: ListTile(
         leading: CircleAvatar(backgroundImage: AssetImage("assets/$image.jpg")),
-        title: Text(name),
-        subtitle: Text(content, maxLines: 7),
+        title: Text(
+          name,
+          style: Theme.of(context).textTheme.headline6!.copyWith(
+                fontSize: 16,
+                fontWeight: FontWeight.bold,
+              ),
+        ),
+        subtitle: Text(
+          content,
+          maxLines: 7,
+          style: Theme.of(context).textTheme.headline6!.copyWith(
+                fontSize: 14,
+                fontWeight: FontWeight.normal,
+              ),
+        ),
       ),
     );
   }

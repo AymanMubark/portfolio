@@ -18,7 +18,7 @@ class WorkItem extends StatelessWidget {
     return Container(
       margin: EdgeInsets.all(15),
       decoration: BoxDecoration(
-        color: Colors.white,
+        color: Theme.of(context).cardColor,
         borderRadius: BorderRadius.circular(12),
         boxShadow: [
           BoxShadow(
@@ -57,12 +57,25 @@ class WorkItem extends StatelessWidget {
             ),
           ),
           ListTile(
-            title: Text(title),
+            title: Text(
+              title,
+              style: TextStyle(
+                color: Theme.of(context).brightness == Brightness.dark
+                    ? Colors.white
+                    : null,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
             contentPadding: EdgeInsets.all(10),
             subtitle: Text(
               description,
               textAlign: TextAlign.justify,
               maxLines: 3,
+              style: TextStyle(
+                color: Theme.of(context).brightness == Brightness.dark
+                    ? Colors.white
+                    : null,
+              ),
             ),
           ),
           Row(

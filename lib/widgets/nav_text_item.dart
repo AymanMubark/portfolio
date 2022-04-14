@@ -14,7 +14,9 @@ class NavTextItem extends StatelessWidget {
         margin: EdgeInsets.symmetric(horizontal: 10),
         child: Text(
           title,
-          style: TextStyle(fontSize: 18),
+          style: Theme.of(context).textTheme.headline6!.copyWith(
+                fontSize: 18,
+              ),
         ),
       ),
     );

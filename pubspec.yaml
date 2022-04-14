@@ -33,6 +33,7 @@ dependencies:
     sdk: flutter
   font_awesome_flutter: ^10.1.0
   google_fonts: ^2.3.1
+  provider: ^6.0.2
   scrollable_positioned_list: ^0.2.3
   url_launcher: ^6.0.20
 
@@ -40,7 +41,6 @@ dev_dependencies:
   flutter_lints: ^1.0.0
   flutter_test:
     sdk: flutter
-
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

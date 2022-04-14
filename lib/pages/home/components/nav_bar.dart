@@ -1,7 +1,8 @@
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:portfolio/blocs/app_bloc.dart';
 import '../../../widgets/nav_text_item.dart';
+import 'package:provider/provider.dart';
 import 'package:flutter/material.dart';
-
 import 'socail_contact.dart';
 
 class NavBar extends StatelessWidget {
@@ -25,10 +26,10 @@ class NavBar extends StatelessWidget {
                 SizedBox(width: 20),
                 Text(
                   'Ayman Ahmed'.toUpperCase(),
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 22,
-                  ),
+                  style: Theme.of(context).textTheme.headline5!.copyWith(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 22,
+                      ),
                 ),
               ],
             ),
@@ -54,13 +55,25 @@ class NavBar extends StatelessWidget {
                     ),
                     const SizedBox(width: 40),
                     SocialContact(),
+                    const SizedBox(width: 10),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 5),
+                      child: IconButton(
+                        icon: Icon(context.watch<AppBloc>().isDark
+                            ? FontAwesomeIcons.sun
+                            : FontAwesomeIcons.moon),
+                        onPressed: () {
+                          context.read<AppBloc>().changeThemeMode();
+                        },
+                      ),
+                    ),
                   ],
                 )
               : IconButton(
                   onPressed: () {
                     Scaffold.of(context).openEndDrawer();
                   },
-                  icon: Icon(FontAwesomeIcons.barsStaggered)),
+                  icon: const Icon(FontAwesomeIcons.barsStaggered)),
         ],
       ),
     );
