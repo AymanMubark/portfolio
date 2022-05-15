@@ -32,7 +32,8 @@ class MyApp extends StatelessWidget {
       title: "Ayman Ahmed",
       themeMode: context.watch<AppBloc>().themeMode,
       darkTheme: ThemeData.dark().copyWith(
-        scaffoldBackgroundColor: Colors.black,
+        scaffoldBackgroundColor: const Color(0xFF212332),
+        cardColor: const Color(0xFF2A2D3E),
         textTheme: GoogleFonts.workSansTextTheme().copyWith(
           headline1: GoogleFonts.workSansTextTheme().headline1!.copyWith(
                 color: Colors.white,

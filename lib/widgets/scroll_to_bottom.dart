@@ -9,7 +9,7 @@ class ScrollToBottom extends StatelessWidget {
       margin: EdgeInsets.symmetric(vertical: 50),
       child: Column(
         children: [
-          Text('SCROLL', style: TextStyle(fontSize: 16, color: Colors.black45)),
+          Text('SCROLL', style: TextStyle(fontSize: 16)),
           SizedBox(height: 20),
           Icon(Icons.expand_more, size: 15),
           Icon(Icons.expand_more, size: 15),

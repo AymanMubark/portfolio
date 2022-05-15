@@ -15,15 +15,15 @@ class JobDesciptionSection extends StatelessWidget {
             textAlign: TextAlign.center,
             style: Theme.of(context).textTheme.headline5,
           ),
-          SizedBox(height: 30),
+          const SizedBox(height: 30),
           OutlinedButton(
             onPressed: () {},
             style: OutlinedButton.styleFrom(
-              padding: EdgeInsetsDirectional.all(20),
-              backgroundColor: Colors.black,
+              padding: const EdgeInsetsDirectional.all(20),
+              backgroundColor: const Color(0xFF2A2D3E),
               primary: Colors.white,
             ),
-            child: Text("Reach out to me"),
+            child: const Text("Reach out to me"),
           )
         ],
       ),

@@ -8,7 +8,7 @@ class FooterSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.black,
+      color: const Color(0xFF2A2D3E),
       padding: EdgeInsets.symmetric(
         vertical: 35,
         horizontal: MediaQuery.of(context).size.width * .1,
@@ -35,21 +35,21 @@ class FooterSection extends StatelessWidget {
                   color: Colors.white,
                 ),
           ),
-          SizedBox(
+          const SizedBox(
             width: 30,
           ),
           IconButton(
             onPressed: () {
               launch('mailto:cs.aymanmubark@gmail.com');
             },
-            icon: Icon(FontAwesomeIcons.solidEnvelope),
+            icon: const Icon(FontAwesomeIcons.solidEnvelope),
             color: Colors.white,
           ),
           IconButton(
             onPressed: () {
               launch('tel:+966558413580');
             },
-            icon: Icon(FontAwesomeIcons.squarePhone),
+            icon: const Icon(FontAwesomeIcons.squarePhone),
             color: Colors.white,
           ),
         ],

@@ -47,7 +47,7 @@ class AboutSection extends StatelessWidget {
                       },
                       style: OutlinedButton.styleFrom(
                         padding: EdgeInsetsDirectional.all(20),
-                        backgroundColor: Colors.black,
+                        backgroundColor: Color(0xFF2A2D3E),
                         primary: Colors.white,
                       ),
                       child: Text("Full CV"),
