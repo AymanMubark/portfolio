@@ -43,7 +43,8 @@ class AboutSection extends StatelessWidget {
                     SizedBox(height: 20),
                     OutlinedButton(
                       onPressed: () {
-                        launch('https://aymanmubark.github.io/CV/');
+                        launch(
+                            'https://aymanmubark.github.io/CV/Senior%20Software%20Engineer.pdf');
                       },
                       style: OutlinedButton.styleFrom(
                         padding: EdgeInsetsDirectional.all(20),
