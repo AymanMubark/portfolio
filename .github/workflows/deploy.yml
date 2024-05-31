@@ -21,6 +21,12 @@ jobs:
       - name: Install dependencies
         run: flutter pub get
 
+      - name: Check for Outdated Dependencies
+        run: flutter pub outdated || true # Continue even if there are outdated dependencies
+
+      - name: Upgrade Dependencies
+        run: flutter pub upgrade
+
       - name: Build web app
         run: flutter build web
 
